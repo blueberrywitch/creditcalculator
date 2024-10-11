@@ -1,6 +1,6 @@
 package dika.creditcalculator;
 
-public class Business extends Generation{
+public class Business extends Generation {
     private double loanAmount;
     private double monthlyPayment;
     private double percent;
@@ -30,10 +30,5 @@ public class Business extends Generation{
             }
         }
         return amountOfPay;
-    }
-
-    @Override
-    public void close() throws Exception {
-
     }
 }

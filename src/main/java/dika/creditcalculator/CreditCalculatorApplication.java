@@ -15,22 +15,17 @@ public class CreditCalculatorApplication {
         double res;
         String[] dataString = scan.scanData();
         if (dataString[3].equals("human")) {
-            try (Human human = new Human(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]))) {
-                human.possibilityOfRepaying(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
-                res = (human.amountOfPay() - Double.parseDouble(dataString[0]));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            Human human = new Human(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
+            human.possibilityOfRepaying(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
+            res = (human.amountOfPay() - Double.parseDouble(dataString[0]));
+
         } else {
-            try (Business business = new Business(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]))) {
-                business.possibilityOfRepaying(Double.parseDouble(dataString[0]) -  Double.parseDouble(dataString[1])*12, Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
-                res = (business.amountOfPay() - Double.parseDouble(dataString[0]));
-            }
-            catch(Exception e) {
-                throw new RuntimeException(e);
-            }
+            Business business = new Business(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
+            business.possibilityOfRepaying(Double.parseDouble(dataString[0]) - Double.parseDouble(dataString[1]) * 12, Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
+            res = (business.amountOfPay() - Double.parseDouble(dataString[0]));
+
         }
-        DecimalFormat dF = new DecimalFormat( "#.0" );
+        DecimalFormat dF = new DecimalFormat("#.0");
         System.out.println(dF.format(res));
     }
 

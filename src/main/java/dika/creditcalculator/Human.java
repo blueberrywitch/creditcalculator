@@ -1,10 +1,5 @@
 package dika.creditcalculator;
 
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-@Slf4j
 public class Human extends Generation {
     private double loanAmount;
     private final double monthlyPayment;
@@ -17,9 +12,7 @@ public class Human extends Generation {
         this.percent = percent;
     }
 
-    public double amountOfPay(){
-        log.info("d");
-        log.info("loan {}", loanAmount);
+    public double amountOfPay() {
         while (loanAmount > 0) {
             loanAmount = loanAmount + loanAmount * (percent * 0.01);
             if (loanAmount > monthlyPayment * 12) {
@@ -30,11 +23,6 @@ public class Human extends Generation {
                 loanAmount = 0;
             }
         }
-        return amountOfPay ;
-    }
-
-    @Override
-    public void close() throws Exception {
-
+        return amountOfPay;
     }
 }
