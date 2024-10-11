@@ -14,15 +14,18 @@ public class CreditCalculatorApplication {
         Scan scan = new Scan();
         double res;
         String[] dataString = scan.scanData();
-        if (dataString[3].equals("human")) {
-            Human human = new Human(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
-            human.possibilityOfRepaying(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
-            res = (human.amountOfPay() - Double.parseDouble(dataString[0]));
+        double loanAmount = Double.parseDouble(dataString[0]);
+        final double monthlyPayment = Double.parseDouble(dataString[1]);
+        final double percent = Double.parseDouble(dataString[2]);
+        if (dataString[3].equals(Person.HUMAN.toString())) {
+            Human human = new Human(loanAmount, monthlyPayment, percent);
+            human.possibilityOfRepaying(loanAmount, monthlyPayment, percent);
+            res = (human.amountOfPay() - loanAmount);
 
         } else {
-            Business business = new Business(Double.parseDouble(dataString[0]), Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
-            business.possibilityOfRepaying(Double.parseDouble(dataString[0]) - Double.parseDouble(dataString[1]) * 12, Double.parseDouble(dataString[1]), Double.parseDouble(dataString[2]));
-            res = (business.amountOfPay() - Double.parseDouble(dataString[0]));
+            Business business = new Business(loanAmount, monthlyPayment, percent);
+            business.possibilityOfRepaying(loanAmount - monthlyPayment * 12, monthlyPayment, percent);
+            res = (business.amountOfPay() - loanAmount);
 
         }
         DecimalFormat dF = new DecimalFormat("#.0");
