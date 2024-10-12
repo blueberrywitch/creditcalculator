@@ -1,5 +1,6 @@
-package dika.creditcalculator;
+package dika.creditcalculator.util;
 
+import dika.creditcalculator.exception.InvalidArgumentException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Scanner;

@@ -1,4 +1,6 @@
-package dika.creditcalculator;
+package dika.creditcalculator.enums;
+
+import dika.creditcalculator.service.Generation;
 
 public class Business extends Generation {
     private double loanAmount;

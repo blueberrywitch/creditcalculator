@@ -1,4 +1,4 @@
-package dika.creditcalculator;
+package dika.creditcalculator.enums;
 
 public enum Person {
     HUMAN,

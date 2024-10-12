@@ -1,4 +1,4 @@
-package dika.creditcalculator;
+package dika.creditcalculator.util;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

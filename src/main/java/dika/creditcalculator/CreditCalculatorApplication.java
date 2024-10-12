@@ -1,5 +1,8 @@
 package dika.creditcalculator;
 
+import dika.creditcalculator.service.CreditCalculator;
+import dika.creditcalculator.util.Format;
+import dika.creditcalculator.util.Scan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication

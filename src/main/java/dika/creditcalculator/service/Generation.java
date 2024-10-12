@@ -1,4 +1,6 @@
-package dika.creditcalculator;
+package dika.creditcalculator.service;
+
+import dika.creditcalculator.exception.InvalidArgumentException;
 
 public abstract class Generation {
 

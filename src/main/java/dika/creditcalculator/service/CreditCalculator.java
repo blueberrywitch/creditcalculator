@@ -1,5 +1,8 @@
-package dika.creditcalculator;
+package dika.creditcalculator.service;
 
+import dika.creditcalculator.exception.InvalidArgumentException;
+import dika.creditcalculator.enums.Business;
+import dika.creditcalculator.enums.Person;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

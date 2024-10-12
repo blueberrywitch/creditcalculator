@@ -1,4 +1,4 @@
-package dika.creditcalculator;
+package dika.creditcalculator.service;
 
 public class Human extends Generation {
     private double loanAmount;
