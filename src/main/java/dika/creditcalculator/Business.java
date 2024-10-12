@@ -2,9 +2,8 @@ package dika.creditcalculator;
 
 public class Business extends Generation {
     private double loanAmount;
-    private double monthlyPayment;
-    private double percent;
-    private double amountOfPay = 0;
+    private final double monthlyPayment;
+    private final double percent;
 
     public Business(double loanAmount, double monthlyPayment, double percent) {
         this.loanAmount = loanAmount;
@@ -13,6 +12,7 @@ public class Business extends Generation {
     }
 
     public double amountOfPay() {
+        double amountOfPay = 0;
         if (loanAmount - monthlyPayment * 12 <= 0) {
             amountOfPay = loanAmount;
         } else {

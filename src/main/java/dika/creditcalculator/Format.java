@@ -1,17 +1,13 @@
 package dika.creditcalculator;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class Format {
 
-    private double res;
-
-    public Format(double res){
-        this.res = res;
-    }
-
-    public void form(){
-        DecimalFormat dF = new DecimalFormat("#.0");
+    public void form(double res) {
+        DecimalFormat dF = new DecimalFormat("#.0", DecimalFormatSymbols.getInstance(Locale.US));
         System.out.println(dF.format(res));
     }
 }
